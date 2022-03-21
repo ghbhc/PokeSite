@@ -1,6 +1,17 @@
-{% extends "base_generic.html" %}
+{% extends "dex/base_generic.html" %}
 
 {% block content %}
     <h1>Pokedex Site Home</h1>
     <p>Welcome to my Pokedex website!</p>
+        <h2>Pokemon Primary Type Counts</h2>
+        <ul style="list-style-type:none">
+            {% for i in type_count %}
+                <div>
+                    <li>
+                        <span class="col">{{ i.type1 }}:</span>
+                        <span>{{ i.n }}</span>
+                    </li>
+                <div>
+            {% endfor %}
+        </ul>
 {% endblock %}
