@@ -1,0 +1,8 @@
+{% extends "dex/base_generic.html" %}
+{% block content %}
+    <ul>
+    {% for p in type_list %}
+        <li>{{ p.name }}</li> 
+    {% endfor %}
+    </ul>
+{% endblock %}
