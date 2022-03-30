@@ -1,8 +1,10 @@
 {% extends "dex/base_generic.html" %}
+{% load static %}
 {% block content %}
     <ul>
-    {% for p in type_list %}
+    {% for p in pokemon%}
         <li>{{ p.name }}</li> 
+        <img src="{% static 'dex/images/' %}{{p.number}}.png ">
     {% endfor %}
     </ul>
 {% endblock %}

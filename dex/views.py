@@ -1,6 +1,6 @@
 from django.shortcuts import render
 from django.db import models
-from django.views import generic
+from django.urls import reverse
 from .models import Pokemon
 
 def index(request):
@@ -21,9 +21,13 @@ def typeListView(request, _type):
     '''
     view to display Pokemon having a specific primary type
     '''
-    type_list = Pokemon.objects.filter(type1=_type.capitalize())
+    pokemon = Pokemon.objects.filter(type1=_type.capitalize())
     context = {
-        'type_list': type_list,
+        'pokemon': pokemon,
     }
+
+    def get_absolute_url(self):
+    
+        return reverse("type_list", kwargs={'_type': self._type})
     
     return render(request, 'dex/type.html', context=context)

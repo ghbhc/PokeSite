@@ -8,8 +8,12 @@
             {% for i in type_count %}
                 <div>
                     <li>
-                        <span class="col">{{ i.type1 }}:</span>
-                        <span>{{ i.n }}</span>
+                        <span class="col">
+                            <a href="{% url 'type_list' i.type1 %}">{{ i.type1 }}</a>:
+                        </span>
+                        <span>
+                            {{ i.n }}
+                        </span>
                     </li>
                 <div>
             {% endfor %}
