@@ -30,7 +30,7 @@ else:
     print('getting Pokemon images...')
     for n in range(1,152):
         pic = requests.get(f'{images_base_url}/{n:03}.png')
-        with open(f'{img_dir}/{n:03}.png', 'wb') as f:
+        with open(f'{img_dir}/{n}.png', 'wb') as f:
             f.write(pic.content)
 
 ##################
