@@ -1,10 +1,17 @@
 {% extends "dex/base_generic.html" %}
 {% load static %}
 {% block content %}
-    <ul>
-    {% for p in pokemon%}
-        <li>{{ p.name }}</li> 
-        <img src="{% static 'dex/images/' %}{{p.number}}.png ">
-    {% endfor %}
-    </ul>
+<h1 class="type_h1">All Gen 1 {{p_type}}-type Pokemon</h1>
+<div class="container">
+    {% for p in pokemon %}
+    {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+      <div class="col-md-4">
+          <div class="card border-dark mb-3">
+              <img src="{% static 'dex/images/' %}{{p.number}}.png">
+              <div class="card-footer text-muted">#{{ p.number}}<a href="#" class="card-link"><h3>{{ p.name }}</h3></a></div>
+          </div><!-- card -->
+      </div><!-- col-md-4 -->
+    {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
+    {%  endfor %}
+ </div><!-- container -->
 {% endblock %}

@@ -22,8 +22,10 @@ def typeListView(request, _type):
     view to display Pokemon having a specific primary type
     '''
     pokemon = Pokemon.objects.filter(type1=_type.capitalize())
+    p_type = _type # can't use underscore var's in templates
     context = {
         'pokemon': pokemon,
+        'p_type': p_type,
     }
 
     def get_absolute_url(self):
