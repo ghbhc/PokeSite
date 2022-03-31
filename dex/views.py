@@ -39,7 +39,11 @@ def pokeDetailView(request, pname):
     '''
     view to display detailed info on a particular Pokemon
     '''
-    p = Pokemon.objects.get(name=pname.capitalize())
+    annoying_url_names = ['mr-mime', 'nidoran-female', 'nidoran-male', 'farfetchd']
+    if pname in annoying_url_names:
+        p = Pokemon.objects.get(name=pname)
+    else:
+        p = Pokemon.objects.get(name=pname.capitalize())
 
     context = {
         'p': p,
