@@ -8,7 +8,7 @@
       <div class="col-md-4">
           <div class="card border-dark mb-3">
               <img src="{% static 'dex/images/' %}{{p.number}}.png">
-              <div class="card-footer text-muted">#{{ p.number}}<a href="#" class="card-link"><h3>{{ p.name }}</h3></a></div>
+              <div class="card-footer text-muted">#{{ p.number}}<a href="{% url 'poke_detail' p.name %}" class="card-link"><h3>{{ p.name }}</h3></a></div>
           </div><!-- card -->
       </div><!-- col-md-4 -->
     {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
