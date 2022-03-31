@@ -1,3 +1,4 @@
+from unicodedata import name
 from django.shortcuts import render
 from django.db import models
 from django.urls import reverse
@@ -33,3 +34,19 @@ def typeListView(request, _type):
         return reverse("type_list", kwargs={'_type': self._type})
     
     return render(request, 'dex/type.html', context=context)
+
+def pokeDetailView(request, pname):
+    '''
+    view to display detailed info on a particular Pokemon
+    '''
+    p = Pokemon.objects.get(name=pname.capitalize())
+
+    context = {
+        'p': p,
+    }
+
+    def get_absolute_url(self):
+    
+        return reverse("poke_detail", kwargs={'pname': self.pname})
+
+    return render(request, 'dex/detail.html', context=context)
