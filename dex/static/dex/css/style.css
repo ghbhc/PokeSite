@@ -1,3 +1,38 @@
+/*
+COLOR PALETTE
+#FFCB05 - Pokemon Yellow
+#2A75BB - Pokemon Blue
+#343434 - dark gray, almost black
+*/
+
+header {
+    color: #FFFFFF;
+    background: #343434;
+    margin-bottom: 40px;
+}
+
+.flex-container {
+    display: flex;
+}
+
+.flex-child {
+    padding-left: 74px;
+    flex: 1;
+}  
+
+.flex-child:first-child {
+    margin-right: 20px;
+} 
+
+.custom_header {
+    padding: 30px;
+    padding-left: 75px;
+    text-align: left;
+}
+.custom_header .type {
+    text-align: center;
+}
+
 .col {
     width: 75px;
     float: left;
@@ -7,7 +42,17 @@
     text-align: center;
 }
 
+.home_img {
+    width: 1000px;
+}
+
 .type_img {
     margin: auto;
     width: 250px;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
 }
