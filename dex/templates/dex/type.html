@@ -1,7 +1,13 @@
 {% extends "dex/base_generic.html" %}
 {% load static %}
+{% block header %}
+<div class="custom_header">
+    <div class="type">
+        <h1>All Gen 1 {{p_type}}-type Pokemon</h1>
+    </div>
+</div>
+{% endblock %}
 {% block content %}
-<h1 class="type_h1">All Gen 1 {{p_type}}-type Pokemon</h1>
 <div class="container">
     {% for p in pokemon %}
     {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
