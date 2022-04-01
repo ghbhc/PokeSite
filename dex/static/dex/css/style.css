@@ -13,10 +13,11 @@ header {
 
 .flex-container {
     display: flex;
+    padding-top: 35px;
 }
 
 .flex-child {
-    padding-left: 74px;
+    padding-left: 75px;
     flex: 1;
 }  
 
