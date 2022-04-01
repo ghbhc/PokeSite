@@ -6,3 +6,8 @@
 .type_h1 {
     text-align: center;
 }
+
+.type_img {
+    margin: auto;
+    width: 250px;
+}

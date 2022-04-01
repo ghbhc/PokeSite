@@ -6,8 +6,8 @@
     {% for p in pokemon %}
     {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
       <div class="col-md-4">
-          <div class="card border-dark mb-3">
-              <img src="{% static 'dex/images/' %}{{p.number}}.png">
+          <div class="card border-dark mb-3" style="width:350px">
+              <img class="type_img" src="{% static 'dex/images/' %}{{p.number}}.png">
               <div class="card-footer text-muted">#{{ p.number}}<a href="{% url 'poke_detail' p.name %}" class="card-link"><h3>{{ p.name }}</h3></a></div>
           </div><!-- card -->
       </div><!-- col-md-4 -->
