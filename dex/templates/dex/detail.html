@@ -1,7 +1,11 @@
 {% extends "dex/base_generic.html" %}
 {% load static %}
-{% block content %}
+{% block header %}
+<div class="custom_header">
     <h1>{{p.name}}</h1>
+</div>
+{% endblock %}
+{% block content %}
     <img src="{% static 'dex/images/' %}{{p.number}}.png">
     <p>{{p.name}} is Pokemon #{{p.number}} and is a {{p.type1}}-type Pokemon</p>
     <p>{{p.name}} is {{p.height}} tall and weighs {{p.weight}}
