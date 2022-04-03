@@ -57,3 +57,8 @@ header {
     grid-template-columns: 1fr 1fr;
     grid-gap: 20px;
 }
+
+.search_result_msg {
+    text-align: center;
+    padding: 50px;
+}

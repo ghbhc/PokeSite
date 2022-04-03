@@ -2,6 +2,7 @@ from unicodedata import name
 from django.shortcuts import render
 from django.db import models
 from django.urls import reverse
+from django.views.generic import ListView
 from .models import Pokemon
 
 def index(request):
@@ -54,3 +55,39 @@ def pokeDetailView(request, pname):
         return reverse("poke_detail", kwargs={'pname': self.pname})
 
     return render(request, 'dex/detail.html', context=context)
+
+def searchResultsView(request):
+    '''    
+    view to display search results of pokemon names
+    '''
+    if request.method == "POST":
+        
+        query = request.POST['query']
+        poke_list = Pokemon.objects.filter(name__icontains=(query))
+
+        context = {
+            'query': query,
+            'poke_list': poke_list
+        }
+
+        return render(request, 'dex/search_results.html', context=context) 
+    else:
+        context = {
+
+        }
+
+        return render(request, 'dex/search_results.html', context=context) 
+    
+
+    '''
+    class SearchResultsView(ListView):
+        view to display search results of pokemon names
+        model = Pokemon 
+        template_name = 'dex/search_results.html'
+
+        def get_queryset(self):
+            query = self.request.GET.get("q")
+            poke_list = Pokemon.objects.filter(name__unaccent__icontains=(query))
+
+            return poke_list
+    '''

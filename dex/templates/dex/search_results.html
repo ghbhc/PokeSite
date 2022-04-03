@@ -1,0 +1,37 @@
+{% extends "dex/base_generic.html" %}
+{% load static %}
+{% block header %}
+    <div class="custom_header">
+        <div class="type">
+            <h1>Pokedex search results for "{{query}}"</h1>
+        </div>
+    </div>
+{% endblock %}
+{% block content %}
+
+    {% if query %}
+        {% if poke_list|length > 0 %}:
+            <div class="container">
+                {% for p in poke_list %}
+                    {% if forloop.counter0|divisibleby:3 %} <div class="row text-center"> {%  endif %}
+                        <div class="col-md-4">
+                            <div class="card border-dark mb-3" style="width:350px">
+                                <img class="type_img" src="{% static 'dex/images/' %}{{p.number}}.png">
+                                <div class="card-footer text-muted">
+                                    #{{ p.number}}<a href="{% url 'poke_detail' p.name %}" class="card-link"><h3>{{ p.name }}</h3></a>
+                                </div><!-- card-footer -->
+                            </div><!-- card -->
+                        </div><!-- col-md-4 -->
+                    {%  if forloop.counter|divisibleby:3 or forloop.last %}</div><!-- row closing --><hr>{%  endif %}
+                {%  endfor %}
+             </div><!-- container -->
+
+        {% else %}
+            <h1 class="search_result_msg">We couldn't find anything in the Pokedex for "{{ query }}"...</h1>
+        {% endif %}
+
+    {% else %}
+        <h1 class="search_result_msg">You didn't search for anything!</h1>
+    {% endif %}
+
+{% endblock %}
