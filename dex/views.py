@@ -77,17 +77,14 @@ def searchResultsView(request):
         }
 
         return render(request, 'dex/search_results.html', context=context) 
+
+def allView(request):
+    '''
+    view to display all original 151 Pokemon
+    '''
+    pokemon = Pokemon.objects.all()
+    context = {
+        'pokemon': pokemon
+    }
     
-
-    '''
-    class SearchResultsView(ListView):
-        view to display search results of pokemon names
-        model = Pokemon 
-        template_name = 'dex/search_results.html'
-
-        def get_queryset(self):
-            query = self.request.GET.get("q")
-            poke_list = Pokemon.objects.filter(name__unaccent__icontains=(query))
-
-            return poke_list
-    '''
+    return render(request, 'dex/all.html', context=context)
