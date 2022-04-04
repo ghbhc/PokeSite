@@ -2,12 +2,25 @@
 {% load static %}
 {% block header %}
 <div class="custom_header">
-    <h1>{{p.name}}</h1>
+    <div class="detail">
+        <h1>{{p.name}}</h1>
+    <div class="detail">
 </div>
 {% endblock %}
 {% block content %}
-    <img src="{% static 'dex/images/' %}{{p.number}}.png">
-    <p>{{p.name}} is Pokemon #{{p.number}} and is a {{p.type1}}-type Pokemon</p>
-    <p>{{p.name}} is {{p.height}} tall and weighs {{p.weight}}
-    <p>{{p.description}}</p>
+    <div class="card" style="width:515px; border:3px solid black; margin-left:75px;">
+        <div class="card-body">
+            <img src="{% static 'dex/images/' %}{{p.number}}.png">
+        </div>
+    </div>
+    <div class="detail_text">
+        <p>{{p.name}} is Pokemon #{{p.number}} and is a {{p.type1}}-type Pokemon</p>
+        <p>{{p.name}} is {{p.height}} tall and weighs {{p.weight}}
+        <div class="content_wrap">
+            <p>"{{p.description}}"</p>
+        </div>
+    <div class="prev_next">
+        <button type=submit>previous</button>
+        <button type=submit>next</button>
+    </div>
 {% endblock %}
