@@ -5,6 +5,8 @@ COLOR PALETTE
 #343434 - dark gray, almost black
 */
 
+/* Global styles
+--------------------------------------------*/
 header {
     color: #FFFFFF;
     background: #343434;
@@ -15,20 +17,8 @@ p {
     font-size:20px;
 }
 
-.center {
-    width: 515px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.prev_next {
-    margin-top: 30px;
-    margin-left: 210px;
-}
-
-.detail_text {
-    margin-top: 30px;
-}
+/* Index page
+--------------------------------------------*/
 
 .flex-container {
     display: flex;
@@ -44,10 +34,30 @@ p {
     margin-right: 20px;
 } 
 
+/* Detail page
+--------------------------------------------*/
+.center {
+    width: 515px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.prev_next {
+    margin-top: 30px;
+    margin-left: 185px;
+}
+
+.detail_text {
+    margin-top: 30px;
+}
+
+/* Type, Search, All pages
+--------------------------------------------*/
+
 .custom_header {
     padding: 30px;
-    padding-left: 75px;
     text-align: center;
+    font-size: 70px;
 }
 
 .col {
@@ -55,31 +65,12 @@ p {
     float: left;
 }
 
-.type_h1 {
-    text-align: center;
-}
-
-.home_img {
-    width: 1000px;
-}
-
-.type_img {
+.smaller_img {
     margin: auto;
     width: 250px;
-}
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 20px;
 }
 
 .search_result_msg {
     text-align: center;
     padding: 50px;
 }
-
-.content_wrap {
-    width: 515px;
-}
-

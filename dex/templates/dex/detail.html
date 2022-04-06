@@ -2,27 +2,26 @@
 {% load static %}
 {% block header %}
 <div class="custom_header">
-    <div class="detail">
-        <h1 style="font-size:70px;">{{p.name}}</h1>
-    <div class="detail">
+    <h1 style="font-size:70px;">{{p.name}}</h1>
 </div>
 {% endblock %}
 {% block content %}
     <div class="center">
-    <div class="card" style="width:515px; border:3px solid black;">
-        <div class="card-body">
-            <img src="{% static 'dex/images/' %}{{p.number}}.png">
+        <div class="card" style="width:515px; background:#F7FFF7; border:3px solid #FFCB05; outline: 10px solid #2A75BB;">
+            <div class="card-body">
+                <img src="{% static 'dex/images/' %}{{p.number}}.png">
+            </div>
         </div>
-    </div>
-    <div class="detail_text">
-        <p>{{p.name}} is Pokemon #{{p.number}} and is a {{p.type1}}-type Pokemon</p>
-        <p>{{p.name}} is {{p.height}} tall and weighs {{p.weight}}
-        <div class="content_wrap">
-            <p>"{{p.description}}"</p>
+        <div class="detail_text">
+            <p>{{p.name}} is Pokemon #{{p.number}} and is a {{p.type1}}-type Pokemon</p>
+            <p>{{p.name}} is {{p.height}} tall and weighs {{p.weight}}
+            <div class="content_wrap">
+                <p>"{{p.description}}"</p>
+            </div>
+            <div class="prev_next">
+                <button type=submit>previous</button>
+                <button type=submit>next</button>
+            </div>
         </div>
-    <div class="prev_next">
-        <button type=submit>previous</button>
-        <button type=submit>next</button>
-    </div>
-</div>
+    </div>    
 {% endblock %}
