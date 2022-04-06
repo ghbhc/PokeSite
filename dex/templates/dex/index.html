@@ -8,41 +8,22 @@
 </div>
 {% endblock %}
 {% block content %}
-<body style="background-image: url('{% static "dex/images/rai_and_pika_faded.jpg" %}'); background-repeat: no-repeat; background-attachment: scroll;   background-position: 100% 0%;
+<body style="background-image: url('{% static "dex/images/rai_and_pika_faded.jpg" %}'); background-repeat: no-repeat; background-attachment: scroll;   background-position: 50% 0%;
 ">
-    <div class="flex-container">
-        <div class="flex-child">
-            <p>Thanks for visiting my Pokedex website! This is a project I did for fun and professional development 
-                using <a href="https://www.djangoproject.com/" target=_blank>Django</a>.  The original 151 Pokemon 
-                are one of my favorite go-to data sets to work with because they have a lot of nostalgia value for 
-                me and they present some fun ways to think about and organize data.</p>
-                
-            <p>To get the images and other information about the Pokemon for this webiste, I wrote a Python 
-               <a href="https://github.com/ghbhc/PokeSite/blob/master/get-poke-data.py" target=_blank>script</a>
-               to scrape data from <a href="https://www.pokemon.com/" target=_blank>pokemon.com</a>.  If you're 
-               interested in seeing any of templates, views, urls, etc... for this website, all of the source 
-               code can be found on my Github page <a href="https://github.com/ghbhc/PokeSite" target=_blank>here</a>.</p>  
-                
-            <p>Please check out the different links in the top nav bar, or search for your favorite Gen 1 Pokemon 
-               in the search bar.</p>
-        </div>
-        <div class="flex-child">
-            <h2>Primary Type Counts</h2>
-            <ul style="list-style-type:none">
-                {% for i in type_count %}
-                    <div>
-                        <li>
-                            <span class="col">
-                                <a href="{% url 'type_list' i.type1 %}">{{ i.type1 }}</a>:
-                            </span>
-                            <span>
-                                {{ i.n }}
-                            </span>
-                        </li>
-                    <div>
-                {% endfor %}
-            </ul>
-        </div>
+    <div class="center_home">
+        <p>Thanks for visiting my Pokedex website! This is a project I did for fun and professional development 
+            using <a href="https://www.djangoproject.com/" target=_blank>Django</a>.  The original 151 Pokemon 
+            are one of my favorite go-to data sets to work with because they have a lot of nostalgia value for 
+            me and they present some fun ways to think about and organize data.</p>
+            
+        <p>To get the images and other information about the Pokemon for this webiste, I wrote a Python 
+            <a href="https://github.com/ghbhc/PokeSite/blob/master/get-poke-data.py" target=_blank>script</a>
+            to scrape data from <a href="https://www.pokemon.com/" target=_blank>pokemon.com</a>.  If you're 
+            interested in seeing any of templates, views, urls, etc... for this website, all of the source 
+            code can be found on my Github page <a href="https://github.com/ghbhc/PokeSite" target=_blank>here</a>.</p>  
+            
+        <p>Please check out the different links in the top nav bar, or search for your favorite Gen 1 Pokemon 
+            in the search bar.  You can browse to a particular Pokemon's detail page and click through all 151 of them.</p>
     </div>
 </body>
 {% endblock %}

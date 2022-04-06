@@ -14,41 +14,35 @@ header {
 }
 
 p {
-    font-size:20px;
+    font-size:22px;
 }
 
 /* Index page
 --------------------------------------------*/
-
-.flex-container {
-    display: flex;
-    padding-top: 35px;
+.center_home {
+    width: 1000px;
+    padding-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.flex-child {
-    padding-left: 75px;
-    flex: 1;
-}  
-
-.flex-child:first-child {
-    margin-right: 20px;
-} 
 
 /* Detail page
 --------------------------------------------*/
-.center {
+.center_detail {
     width: 515px;
     margin-left: auto;
     margin-right: auto;
 }
 
 .prev_next {
-    margin-top: 30px;
-    margin-left: 185px;
+    position: absolute;
+    margin-left: 135px;
 }
 
 .detail_text {
     margin-top: 30px;
+    height: 270px;
 }
 
 /* Type, Search, All pages
