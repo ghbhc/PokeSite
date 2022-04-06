@@ -46,8 +46,20 @@ def pokeDetailView(request, pname):
     else:
         p = Pokemon.objects.get(name=pname.capitalize())
 
+    num = p.number
+    if num == 1:
+        prev = Pokemon.objects.get(number=151)
+    else:
+        prev = Pokemon.objects.get(number=num-1)
+    if num == 151:
+        next = Pokemon.objects.get(number=1)
+    else:
+        next = Pokemon.objects.get(number=num+1)
+
     context = {
         'p': p,
+        'prev': prev,
+        'next': next,
     }
 
     def get_absolute_url(self):

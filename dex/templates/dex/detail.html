@@ -6,8 +6,8 @@
 </div>
 {% endblock %}
 {% block content %}
-    <div class="center">
-        <div class="card" style="width:515px; background:#F7FFF7; border:3px solid #FFCB05; outline: 10px solid #2A75BB;">
+    <div class="center_detail">
+        <div class="card" style="width:515px;; border:6px solid #343434;">
             <div class="card-body">
                 <img src="{% static 'dex/images/' %}{{p.number}}.png">
             </div>
@@ -18,10 +18,14 @@
             <div class="content_wrap">
                 <p>"{{p.description}}"</p>
             </div>
-            <div class="prev_next">
-                <button type=submit>previous</button>
-                <button type=submit>next</button>
-            </div>
+        </div>
+        <div class="prev_next">
+            <a href= {% url 'poke_detail' prev.name %}
+            role="button" class="btn btn-primary btn-lg" 
+            style="margin-left: 10px; margin-right: 10px;">Previous</a>
+            <a href= {% url 'poke_detail' next.name %}
+            role="button" class="btn btn-primary btn-lg" 
+            style="margin-left: 10px; margin-right: 10px;">Next</a>
         </div>
     </div>    
 {% endblock %}
